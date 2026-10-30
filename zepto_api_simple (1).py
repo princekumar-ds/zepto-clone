@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import (
@@ -9,7 +10,8 @@ from flask_jwt_extended import (
 
 app = Flask(__name__)
 CORS(app, origins = ["http://localhost:5000", "http://localhost:5010"])
-app.config["JWT_SECRET_KEY"] = "zepto-clone-secret-key-change-me-in-production-123"
+# Real secret comes from the environment; the fallback is for local demo only
+app.config["JWT_SECRET_KEY"] = os.environ.get("JWT_SECRET_KEY", "dev-only-secret-change-me")
 
 jwt = JWTManager(app)
 

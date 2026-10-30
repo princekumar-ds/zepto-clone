@@ -34,3 +34,16 @@ OOP (abstraction, encapsulation, inheritance, polymorphism), REST APIs, JWT auth
 ## Author
 
 Prince Kumar (Billa) - [princekumar-ds](https://github.com/princekumar-ds)
+
+## Configuration
+
+Set a real JWT secret before running (the built-in default is for local demo only):
+
+```bash
+# Windows (cmd)
+set JWT_SECRET_KEY=your-own-long-random-string
+# Mac/Linux
+export JWT_SECRET_KEY=your-own-long-random-string
+```
+
+> The users in `zepto_api_simple.py` are demo data with plain-text passwords. Do not reuse them anywhere real.
